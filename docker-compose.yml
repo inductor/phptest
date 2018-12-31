@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  php-fpm:
+    build: ./php-fpm
+    ports:
+      - 9000:9000
+    volumes:
+      - ./php-fpm/app:/var/www/html
+    working_dir: /var/www/html
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./php-fpm/app:/var/www/html
+    working_dir: /var/www/html
