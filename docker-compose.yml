@@ -2,11 +2,11 @@ version: "3"
 
 services:
   php-fpm:
-    build: ./php-fpm
+    image: php:7.3-fpm
     ports:
       - 9000:9000
     volumes:
-      - ./php-fpm/app:/var/www/html
+      - ./app:/var/www/html
     working_dir: /var/www/html
 
   nginx:
@@ -14,5 +14,5 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./php-fpm/app:/var/www/html
+      - ./app:/var/www/html
     working_dir: /var/www/html
