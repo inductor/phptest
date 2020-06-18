@@ -1,8 +1,8 @@
-version: "3"
+version: "3.8"
 
 services:
   php-fpm:
-    image: php:7.3-fpm
+    image: php:7.4-fpm-alpine
     ports:
       - 9000:9000
     volumes:
